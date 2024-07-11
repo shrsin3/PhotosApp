@@ -30,7 +30,8 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.css'],
 		alias: {
-			Utilities: path.resolve(__dirname, './../node_modules/')
+			Utilities: path.resolve(__dirname, './../node_modules/'),
+			process: "process/browser"
 		}
 	},
 	module: {
@@ -54,9 +55,9 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
+			$: "jquery",
+			jQuery: "jquery",
+			"window.jQuery": "jquery",
 			process: 'process/browser.js'
 		}),
 		new webpack.DefinePlugin({
@@ -68,6 +69,7 @@ module.exports = {
 			template: './index.html',
 			filename: 'index.html',
 			inject: "head",
+			// inject: 'body',
 		}),
 		new MiniCssExtractPlugin(),
 		new CopyWebpackPlugin({
@@ -77,7 +79,7 @@ module.exports = {
 		})
 
 
-],
+	],
 	devtool: "cheap-module-source-map",
 	devServer: {
 		// host: '0.0.0.0',
@@ -85,8 +87,8 @@ module.exports = {
 		static: {
 			directory: path.resolve(__dirname, "./"),
 		},
-		open: true,
-		hot: true,
-		compress: true,
+		// open: true,
+		// hot: true,
+		// compress: true,
 	}
 };
