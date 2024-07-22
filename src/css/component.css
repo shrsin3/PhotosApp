@@ -730,3 +730,57 @@ button img{
 .popup.shortcuts table{
     line-height: 1;
 }
+
+
+#loadingOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    z-index: 1000; /* Make sure it covers all content */
+    justify-content: center;
+    align-items: center;
+
+}
+
+#nextOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(129, 4, 191, 0.5); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    z-index: 1000; /* Make sure it covers all content */
+    justify-content: center;
+    align-items: center;
+
+}
+
+#save-button{
+    margin-top: 16px;
+    margin-right: 20px;
+}
+
+#save-data {
+    background-color: darkorange;
+    /*border-radius: var(--borderradius);*/
+    font-size: 14px;
+    height: 32px;
+    overflow: hidden;
+    padding: 0 8px;
+    width: auto;
+    cursor: pointer;
+    white-space: nowrap;
+    display:block;
+    margin-left: auto;
+}

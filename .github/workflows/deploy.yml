@@ -33,6 +33,7 @@ jobs:
       - name: Build
         env:
           MY_VALUE: ${{ secrets.MY_VALUE }}
+          MY_CONSTANT: ${{ secrets.MY_CONSTANT }}
         run: |
           export NODE_ENV=production
           npm run build
