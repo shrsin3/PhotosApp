@@ -375,7 +375,7 @@ function findInteractiveRole(el, initEl){
 	})
 
 	// check by nodeName (implicit)
-	nodeName = el.nodeName.toLowerCase();
+	let nodeName = el.nodeName.toLowerCase();
 	if(nodeName in interactive_nodes){
 		if ('attr' in interactive_nodes[nodeName]){
 			if(!el.hasAttribute(interactive_nodes[nodeName]['attr']))

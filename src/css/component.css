@@ -767,8 +767,11 @@ button img{
 }
 
 #save-button{
-    margin-top: 16px;
-    margin-right: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 #save-data {
