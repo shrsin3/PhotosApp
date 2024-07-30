@@ -767,6 +767,21 @@ button img{
 }
 
 #save-button{
+    /*margin-right: 20px;*/
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+#header{
+    background-color: #FFEBB2;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-left: 12px;
+    padding-right: 8px;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -775,15 +790,34 @@ button img{
 }
 
 #save-data {
-    background-color: darkorange;
-    /*border-radius: var(--borderradius);*/
+    background-color: #8B44A2;
+    /*color: white;*/
     font-size: 14px;
     height: 32px;
     overflow: hidden;
-    padding: 0 8px;
+    padding: 0px 8px;
     width: auto;
     cursor: pointer;
     white-space: nowrap;
-    display:block;
-    margin-left: auto;
+}
+
+#get-help {
+    background-color: #8B44A2;
+    /*color: white;*/
+    font-size: 14px;
+    height: 32px;
+    overflow: hidden;
+    padding: 0px 8px;
+    width: auto;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#task-heading{
+    color: #8B44A2;
+    font-weight: bold;
+}
+
+#written{
+    color: black;
 }

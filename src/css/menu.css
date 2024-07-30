@@ -25,7 +25,7 @@
 	left: 0;
 	right: 0;
 	z-index: 100;
-	margin-top: 4rem;
+	margin-top: 10rem;
 }
 .main_menu > ul.menu_bar {
 	display: flex;
