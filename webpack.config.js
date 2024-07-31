@@ -51,6 +51,17 @@ module.exports = {
 				exclude: /(node_modules|bower_components)/,
 				use: ['babel-loader']
 			},
+			{
+				test: /\.(pdf|gif|png|jpe?g|svg)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]'
+						}
+					}
+				]
+			}
 		]
 	},
 	plugins: [
