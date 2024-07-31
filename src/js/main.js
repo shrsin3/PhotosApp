@@ -56,6 +56,18 @@ window.addEventListener('load', function (e) {
 	Layers.init();
 }, false);
 
+document.getElementById('get-help').addEventListener('click', ()=>{
+	console.log("function called")
+	document.getElementById('help-document').style.display = 'flex';
+})
+
+document.getElementById('close-button-toolbar').addEventListener('click', ()=>{
+	document.getElementById('help-document').style.display = 'none';
+	document.getElementById('get-help').style.display = 'none';
+
+
+})
+
 
 setTimeout(async () => {
 	await savingData();
