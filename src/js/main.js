@@ -23,6 +23,7 @@ import Base_search_class from './core/base-search.js';
 import File_open_class from './modules/file/open.js';
 import File_save_class from './modules/file/save.js';
 import * as Actions from './actions/index.js';
+import '../../PhtoAppSteps.pdf'
 
 window.addEventListener('load', function (e) {
 	// Initiate app
