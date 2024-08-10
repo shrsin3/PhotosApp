@@ -802,8 +802,22 @@ button img{
 }
 
 #get-help {
+    background-color: #8B44A2;
+    /*color: white;*/
+    display: none;
+    font-size: 14px;
+    height: 32px;
+    overflow: hidden;
+    padding: 0px 8px;
+    width: auto;
+    /*cursor: pointer;*/
+    white-space: nowrap;
+}
+
+#help-text{
     /*background-color: #8B44A2;*/
     /*color: white;*/
+    display: none;
     font-size: 14px;
     height: 32px;
     overflow: hidden;

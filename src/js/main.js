@@ -67,25 +67,28 @@ function handleHelpTimer(){
 	helpButtonWait = helpButtonWait-1;
 	// console.log("Help Timer Called")
 	if(helpButtonWait > 9){
-		let helpButton = document.getElementById("get-help")
+		let helpButton = document.getElementById("help-text")
 		helpButton.innerHTML = "Get help in 00:"+ helpButtonWait;
-		helpButton.disabled = true;
+		// helpButton.disabled = true;
 		helpButton.style.backgroundColor = "#808080"
 		helpButton.style.color = "white"
 	} else if(helpButtonWait !== 0){
-		let helpButton = document.getElementById("get-help")
+		let helpButton = document.getElementById("help-text")
 		helpButton.innerHTML = "Get help in 00:0"+ helpButtonWait;
-		helpButton.disabled = true;
+		// helpButton.disabled = true;
 		helpButton.style.backgroundColor = "#808080"
 		helpButton.style.color = "white"
 	}else {
+		let helpText = document.getElementById("help-text")
+		helpText.style.display = "none"
 		let helpButton = document.getElementById("get-help")
-		helpButton.innerHTML = "Help";
-		helpButton.disabled = false;
+		// helpButton.innerHTML = "Help";
+		// helpButton.disabled = false;
+		helpButton.style.display = "block"
 		clearInterval(helpTimer);
-		helpButton.style.backgroundColor = "#8B44A2"
-		helpButton.style.color = "white"
-		helpButton.style.cursor = "pointer"
+		// helpButton.style.backgroundColor = "#8B44A2"
+		// helpButton.style.color = "white"
+		// helpButton.style.cursor = "pointer"
 	}
 	// console.log(helpButtonWait)
 
