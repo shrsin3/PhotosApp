@@ -69,15 +69,9 @@ function handleHelpTimer(){
 	if(helpButtonWait > 9){
 		let helpButton = document.getElementById("help-text")
 		helpButton.innerHTML = "Get help in 00:"+ helpButtonWait;
-		// helpButton.disabled = true;
-		helpButton.style.backgroundColor = "#808080"
-		helpButton.style.color = "white"
 	} else if(helpButtonWait !== 0){
 		let helpButton = document.getElementById("help-text")
 		helpButton.innerHTML = "Get help in 00:0"+ helpButtonWait;
-		// helpButton.disabled = true;
-		helpButton.style.backgroundColor = "#808080"
-		helpButton.style.color = "white"
 	}else {
 		let helpText = document.getElementById("help-text")
 		helpText.style.display = "none"

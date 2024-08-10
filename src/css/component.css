@@ -815,9 +815,10 @@ button img{
 }
 
 #help-text{
-    /*background-color: #8B44A2;*/
+    background-color: #808080;
     /*color: white;*/
     font-size: 14px;
+    z-index: 10000;
     height: 32px;
     overflow: hidden;
     padding: 0px 8px;
