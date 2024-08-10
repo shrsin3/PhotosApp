@@ -93,7 +93,7 @@ document.getElementById('get-help').addEventListener('click', ()=>{
 	console.log(pauseTime - startTime);
 	clearTimeout(automaticSave);
 	let timeDone = pauseTime - startTime
-	remainingTime = 300000 - timeDone;
+	remainingTime = 480000 - timeDone;
 	console.log("function called")
 	document.getElementById('help-document').style.display = 'flex';
 })
@@ -101,6 +101,8 @@ document.getElementById('get-help').addEventListener('click', ()=>{
 document.getElementById('close-button-toolbar').addEventListener('click', ()=>{
 	document.getElementById('help-document').style.display = 'none';
 	document.getElementById('get-help').style.display = 'none';
+	console.log("Remaining time")
+	console.log(remainingTime)
 	setTimeout(async () => {
 		await savingData();
 	}, remainingTime);
@@ -110,7 +112,7 @@ document.getElementById('close-button-toolbar').addEventListener('click', ()=>{
 
 let automaticSave =setTimeout(async () => {
 	await savingData();
-}, 300000);
+}, 480000);
 
 let date = new Date();
 date = date.toLocaleString("en-CA", {
