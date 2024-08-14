@@ -291,7 +291,7 @@ function getXPath(node){
 	}
 
 	var old = '/' + node.tagName;
-	var new_path = this.xpath(node.parentNode) + old;
+	var new_path = getXPath(node.parentNode) + old;
 
 	return new_path;
 }
