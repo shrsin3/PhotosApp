@@ -291,7 +291,11 @@ function getXPath(node){
 	}
 
 	var old = '/' + node.tagName;
-	var new_path = getXPath(node.parentNode) + old;
+	try{
+		var new_path = getXPath(node.parentNode) + old;
+	} catch (e){
+		var new_path = '' + old;
+	}
 
 	return new_path;
 }
