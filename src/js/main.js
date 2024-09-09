@@ -61,7 +61,7 @@ let helpButtonWait = 60
 let startTime = new Date().getTime();
 let remainingTime;
 
-const helpTimer = setInterval(handleHelpTimer, 1000);
+// const helpTimer = setInterval(handleHelpTimer, 1000);
 
 function handleHelpTimer(){
 	helpButtonWait = helpButtonWait-1;
@@ -88,26 +88,26 @@ function handleHelpTimer(){
 
 }
 
-document.getElementById('get-help').addEventListener('click', ()=>{
-	let pauseTime = new Date().getTime();
-	console.log(pauseTime - startTime);
-	clearTimeout(automaticSave);
-	let timeDone = pauseTime - startTime
-	remainingTime = 480000 - timeDone;
-	console.log("function called")
-	document.getElementById('help-document').style.display = 'flex';
-})
+// document.getElementById('get-help').addEventListener('click', ()=>{
+// 	let pauseTime = new Date().getTime();
+// 	console.log(pauseTime - startTime);
+// 	clearTimeout(automaticSave);
+// 	let timeDone = pauseTime - startTime
+// 	remainingTime = 480000 - timeDone;
+// 	console.log("function called")
+// 	document.getElementById('help-document').style.display = 'flex';
+// })
 
-document.getElementById('close-button-toolbar').addEventListener('click', ()=>{
-	document.getElementById('help-document').style.display = 'none';
-	document.getElementById('get-help').style.display = 'none';
-	console.log("Remaining time")
-	console.log(remainingTime)
-	setTimeout(async () => {
-		await savingData();
-	}, remainingTime);
-
-})
+// document.getElementById('close-button-toolbar').addEventListener('click', ()=>{
+// 	document.getElementById('help-document').style.display = 'none';
+// 	document.getElementById('get-help').style.display = 'none';
+// 	console.log("Remaining time")
+// 	console.log(remainingTime)
+// 	setTimeout(async () => {
+// 		await savingData();
+// 	}, remainingTime);
+//
+// })
 
 
 let automaticSave =setTimeout(async () => {
@@ -253,16 +253,30 @@ async function uploadToS3(){
 
 }
 
+const JSONToFile = () => {
+	const blob = new Blob([JSON.stringify(eventList)], {
+		type: 'application/json',
+	});
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement('a');
+	a.href = url;
+	let date = new Date();
+	a.download = `Photo`+ date+`.json`;
+	a.click();
+};
+
+
 async function savingData() {
 	document.getElementById('loadingOverlay').style.display = 'flex';
 
 	try {
-		const uploadResult = await uploadToS3();
-		console.log("Success")
-		// alert('Upload successful!');
+		// const uploadResult = await uploadToS3();
+		// console.log("Success")
+		JSONToFile();
+		alert('Upload successful!');
 	} catch (error) {
 		console.error('Error uploading data:', error);
-		// alert('Failed to upload data.');
+		alert('Failed to upload data.');
 	} finally {
 		document.getElementById('loadingOverlay').style.display = 'none';
 		document.getElementById('nextOverlay').style.display = 'flex';
