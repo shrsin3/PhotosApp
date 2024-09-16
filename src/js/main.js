@@ -67,7 +67,7 @@ const helpTimer = setInterval(handleHelpTimer, 1000);
 // https://www.tutorialspoint.com/how-to-convert-javascript-seconds-to-minutes-and-seconds
 async function handleHelpTimer() {
 	helpButtonWait = helpButtonWait - 1;
-	let helpButton = document.getElementById("get-help")
+	let helpButton = document.getElementById("help-text")
 	let minutes = Math.floor(helpButtonWait / 60);
 	let extraSeconds = helpButtonWait % 60;
 	if (minutes < 10) {
