@@ -62,7 +62,7 @@ let helpTimer;
 helpButton.style.display = "none"
 
 setTimeout(async () => {
-	helpButton.style.display = "block"
+	// helpButton.style.display = "block"
 	helpTimer = setInterval(handleHelpTimer, 1000);
 }, 420000);
 
