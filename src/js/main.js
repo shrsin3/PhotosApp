@@ -57,17 +57,26 @@ window.addEventListener('load', function (e) {
 	Layers.init();
 }, false);
 
-let helpButtonWait = 480
+let helpButton = document.getElementById("get-help")
+let helpTimer;
+helpButton.style.display = "none"
+
+setTimeout(async () => {
+	helpButton.style.display = "block"
+	helpTimer = setInterval(handleHelpTimer, 1000);
+}, 420000);
+
+let helpButtonWait = 60
 let startTime = new Date().getTime();
 let remainingTime;
 
-const helpTimer = setInterval(handleHelpTimer, 1000);
+// const helpTimer = setInterval(handleHelpTimer, 1000);
 
 // Code inspired from -;
 // https://www.tutorialspoint.com/how-to-convert-javascript-seconds-to-minutes-and-seconds
 async function handleHelpTimer() {
 	helpButtonWait = helpButtonWait - 1;
-	let helpButton = document.getElementById("help-text")
+	let helpButton = document.getElementById("get-help")
 	let minutes = Math.floor(helpButtonWait / 60);
 	let extraSeconds = helpButtonWait % 60;
 	if (minutes < 10) {
@@ -83,6 +92,7 @@ async function handleHelpTimer() {
 	helpButton.style.color = "white"
 
 	if (helpButtonWait === 0) {
+		helpButton.innerHTML = "00:00"
 		clearInterval(helpTimer);
 		await savingData();
 		return;
